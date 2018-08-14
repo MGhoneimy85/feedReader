@@ -21,9 +21,9 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-        it('are defined', function() {
+        it('are defined and not empty array', function() {
             expect(allFeeds).toBeDefined();
-            expect('allFeeds array lenth:'+ allFeeds.length).not.toBe('allFeeds array lenth:'+ 0);
+            expect('allFeeds array length:'+ allFeeds.length).not.toBe('allFeeds array length:'+ 0);
         });
 
 
@@ -52,19 +52,33 @@ $(function() {
     });
     
 
+    
     /* TODO: Write a new test suite named "The menu" */
-
+    describe('The menu', function() {
         /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+        * hidden by default. You'll have to analyze the HTML and
+        * the CSS to determine how we're performing the
+        * hiding/showing of the menu element.
+        */
+        it('is hidden by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+            // reference : https://api.jquery.com/hasclass/
+            expect($('.menu-hidden').is(':visible')).toBe(true);
+            // reference: https://api.jquery.com/visible-selector/
+        });
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+        /* TODO: Write a test that ensures the menu changes
+        * visibility when the menu icon is clicked. This test
+        * should have two expectations: does the menu display when
+        * clicked and does it hide when clicked again.
+        */
+        it('the menu changes visibility when the menu icon is clicked', function() {
+            $('a.menu-icon-link').trigger('click'); // show menu
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            $('a.menu-icon-link').trigger('click'); // hide menu again
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
