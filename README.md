@@ -46,3 +46,26 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+
+
+# Testing using Jasmine
+
+A Udacity feed reader project
+
+This project demonstrates browser based testing using [Jasmine](https://jasmine.github.io/).
+
+
+## Steps to run
+
+Open `index.html` in the browser of your choice.
+It may take some time to completely load as additional network requests are made.
+Once loaded, test results should be displayed at the bottom of the page.
+
+The online version can be seen at http://aviaryan.github.io/ud-feed-reader-testing/
+
+
+### References 
+
+https://api.jquery.com/hasclass/
+https://api.jquery.com/visible-selector/
